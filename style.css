@@ -1,0 +1,336 @@
+/* --- IMPORTACIÓN DE FUENTES DESDE CSS --- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@700;900&display=swap');
+
+/* --- RESET GENERAL --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* --- PALETA DE COLORES E IDENTIDAD CON LOS COLORES DEL LOGO (VARIABLES) --- */
+:root {
+    --bg-principal: #ffffff;       /* Fondo oscuro profundo estilizado */
+    --bg-secundario: #09004d;     /* Bloques alternos texturizados */
+    --texto-primario: #000000;     /* Blanco suave de alto contraste */
+    --texto-secundario: #8a99ad;   /* Gris azulado para soporte */
+    
+    /* Variables exactas del Logotipo de OGD Napo */
+    --color-ogd-azul: #0004ff;     /* Azul institucional primario */
+    --color-ogd-verde: #79b928;    /* Verde orgánico de acento */
+    
+    --fuente-titulo: 'Montserrat', sans-serif; /* Tipografía Sans-Serif moderna adaptada al logo */
+    --fuente-cuerpo: 'Inter', sans-serif;      /* Tipografía complementaria limpia */
+}
+
+body {
+    font-family: var(--fuente-cuerpo);
+    background-color: var(--bg-principal);
+    color: var(--texto-primario);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* --- HEADER --- */
+header {
+    width: 100%;
+    padding: 14px 5%;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-bottom: 2px solid var(--color-ogd-azul);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo-container {
+    display: inline-block;
+}
+
+.brand-logo {
+    height: 70px; /* Proporción ideal y elegante para la barra superior */
+    width: auto;
+    display: block;
+}
+
+/* --- ZONA 1: EL CONCEPTO (HERO BANNER CENTRADO) --- */
+.hero-section {
+    padding: 50px 5% 80px 5%;
+    text-align: center;
+}
+
+.hero-banner {
+    width: 100%;
+    height: 320px;
+    /* Fondo adaptado con gradientes sutiles utilizando los colores exactos de OGD Napo */
+    background: linear-gradient(135deg, rgb(27, 3, 124), rgba(121, 185, 40, 0.2)), url('data:image/+xmsvgl;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path d="M0 50 Q 25 10, 50 50 T 100 50" fill="none" stroke="%2379b928" stroke-width="2"/></svg>');
+    background-size: cover;
+    background-position: center;
+    border: 1px solid rgba(121, 185, 40, 0.3);
+    border-radius: 4px;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.hero-banner::after {
+    content: "IMAGEN PRINCIPAL";
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: var(--fuente-titulo);
+    font-size: 10pt;
+    letter-spacing: 3px;
+    color: var(--color-ogd-verde);
+    opacity: 0.9;
+}
+
+.hero-title-box {
+    display: inline-block;
+    border: 1px solid var(--color-ogd-verde);
+    padding: 4px 12px;
+    font-size: 10pt;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    color: var(--color-ogd-verde);
+    font-family: var(--fuente-titulo);
+    font-weight: 700;
+}
+
+h1 {
+    font-family: var(--fuente-titulo);
+    font-size: 26pt;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1 span {
+    color: var(--color-ogd-verde);
+}
+
+.hero-p {
+    font-size: 11pt;
+    color: var(--texto-secundario);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* --- ZONA 2: EL SERVICIO O ATRIBUTO (DOS COLUMNAS ASIMÉTRICAS) --- */
+.services-section {
+    background-color: var(--bg-secundario);
+    padding: 80px 5%;
+    border-top: 1px solid rgba(138, 153, 173, 0.1);
+    border-bottom: 1px solid rgba(138, 153, 173, 0.1);
+}
+
+.services-container {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+
+.services-column-left {
+    display: table-cell;
+    width: 45%;
+    vertical-align: top;
+    padding-right: 5%;
+}
+
+.services-column-right {
+    display: table-cell;
+    width: 55%;
+    vertical-align: top;
+}
+
+.side-image-box {
+    width: 100%;
+    height: 380px;
+    background-color: rgba(9, 11, 20, 0.6);
+    border: 1px dashed var(--color-ogd-azul);
+    position: relative;
+    text-align: center;
+}
+
+.side-image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.3;
+}
+
+.side-image-box::after {
+    content: "OGD NAPO - ORGANIZACIÓN DE GESTIÓN DE DESTINOS NAPO";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: var(--fuente-titulo);
+    font-size: 10pt;
+    color: var(--texto-secundario);
+    letter-spacing: 2px;
+}
+
+.attribute-item {
+    margin-bottom: 25px;
+    display: table;
+    width: 100%;
+}
+
+.attribute-icon-cell {
+    display: table-cell;
+    width: 50px;
+    vertical-align: top;
+}
+
+.icon-square {
+    width: 32px;
+    height: 32px;
+    border: 2px solid var(--color-ogd-verde);
+    background-color: rgba(121, 185, 40, 0.05);
+    position: relative;
+}
+
+.icon-square::before {
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background-color: var(--color-ogd-azul);
+    top: 11px;
+    left: 11px;
+}
+
+.attribute-text-cell {
+    display: table-cell;
+    vertical-align: top;
+    padding-left: 15px;
+}
+
+.attribute-title-frame {
+    border: 1px solid rgba(45, 45, 136, 0.4);
+    padding: 8px 15px;
+    background-color: rgb(156, 255, 35);
+}
+
+h3 {
+    font-family: var(--fuente-titulo);
+    font-size: 12pt;
+    color: var(--texto-primario);
+    letter-spacing: 0.5px;
+}
+
+.attribute-desc {
+    font-size: 10pt;
+    color: var(--texto-secundario);
+    margin-top: 8px;
+    padding-left: 5px;
+}
+
+/* --- ZONA 3: EL CIERRE (¿POR QUÉ EXISTIMOS? HORIZONTAL DOMINANTE) --- */
+.purpose-section {
+    padding: 90px 5%;
+    text-align: center;
+    background: radial-gradient(circle at center, rgba(0, 0, 0, 0.08) 0%, transparent 50%);
+}
+
+.purpose-badge {
+    display: inline-block;
+    border-bottom: 3px solid var(--color-ogd-azul);
+    padding-bottom: 6px;
+    margin-bottom: 25px;
+}
+
+h2 {
+    font-family: var(--fuente-titulo);
+    font-size: 20pt;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.purpose-text {
+    font-size: 12pt;
+    max-width: 700px;
+    margin: 0 auto 40px auto;
+    color: var(--texto-primario);
+    font-weight: 400;
+}
+
+/* --- SECCIÓN DE ALIADOS --- */
+.allies-section {
+    padding: 60px 5% 100px 5%;
+    border-top: 1px solid rgba(138, 153, 173, 0.1);
+}
+
+.allies-header-box {
+    display: inline-block;
+    border: 1px solid var(--color-ogd-verde);
+    padding: 4px 14px;
+    font-family: var(--fuente-titulo);
+    font-size: 11pt;
+    letter-spacing: 1px;
+    margin-bottom: 40px;
+    color: var(--color-ogd-verde);
+    font-weight: 700;
+}
+
+.allies-grid {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+
+.allies-column {
+    display: table-cell;
+    width: 33.33%;
+    padding: 0 15px;
+    vertical-align: top;
+}
+
+.allies-column:first-child { padding-left: 0; }
+.allies-column:last-child { padding-right: 0; }
+
+.column-tag {
+    border-bottom: 2px solid var(--color-ogd-azul);
+    padding-bottom: 8px;
+    margin-bottom: 15px;
+    display: inline-block;
+}
+
+.allies-column h3 {
+    font-size: 13pt;
+    text-transform: uppercase;
+}
+
+.allies-column p {
+    font-size: 10pt;
+    color: var(--texto-secundario);
+    margin-bottom: 15px;
+}
+
+.allies-link {
+    font-family: var(--fuente-titulo);
+    font-size: 9pt;
+    color: var(--color-ogd-verde);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    transition: color 0.2s ease;
+}
+
+.allies-link:hover {
+    color: var(--color-ogd-azul);
+}
+
+/* --- FOOTER --- */
+footer {
+    background-color: #05060a;
+    padding: 40px 5%;
+    text-align: center;
+    border-top: 1px solid rgba(45, 45, 136, 0.2);
+    font-size: 9pt;
+    color: var(--texto-secundario);
+    letter-spacing: 1px;
+}
